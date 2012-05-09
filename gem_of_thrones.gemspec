@@ -1,8 +1,8 @@
 $LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
-name = "game_of_thrones"
+name = "gem_of_thrones"
 require "#{name}/version"
 
-Gem::Specification.new name, GameOfThrones::VERSION do |s|
+Gem::Specification.new name, GemOfThrones::VERSION do |s|
   s.summary = "Everybody wants to be king, but only one can win (synchronized via a distributed cache)"
   s.authors = ["Michael Grosser"]
   s.email = "michael@grosser.it"

@@ -1,5 +1,5 @@
 $LOAD_PATH.unshift 'lib'
-require 'game_of_thrones'
+require 'gem_of_thrones'
 
 require 'memcached'
 require 'active_support/cache'

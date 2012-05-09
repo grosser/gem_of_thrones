@@ -1,3 +1,3 @@
-class GameOfThrones
+class GemOfThrones
   VERSION = '0.2.0'
 end

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    game_of_thrones (0.2.0)
+    gem_of_thrones (0.2.0)
 
 GEM
   remote: http://rubygems.org/
@@ -31,7 +31,7 @@ PLATFORMS
 DEPENDENCIES
   activesupport (> 3)
   benhutton-libmemcached_store
-  game_of_thrones!
+  gem_of_thrones!
   memcached
   rake
   rspec (~> 2)

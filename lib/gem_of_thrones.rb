@@ -1,10 +1,10 @@
-require "game_of_thrones/version"
+require "gem_of_thrones/version"
 
-class GameOfThrones
+class GemOfThrones
   def initialize(options)
     @options = {
       :timeout => 10 * 60,
-      :cache_key => "GameOfThrones.",
+      :cache_key => "GemOfThrones.",
       :cache => "You have to set :cache",
     }.merge(options)
 

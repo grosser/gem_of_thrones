@@ -1,18 +1,18 @@
 require 'spec_helper'
 
-describe GameOfThrones do
-  let(:cache){ ActiveSupport::Cache::LibmemcachedStore.new(:namespace => "GameOfThronesTest") }
+describe GemOfThrones do
+  let(:cache){ ActiveSupport::Cache::LibmemcachedStore.new(:namespace => "GemOfThronesTest") }
 
   before do
     cache.clear
   end
 
   def new_game(options={})
-    GameOfThrones.new({:cache => cache, :mutex_timeout => 0.01}.merge(options))
+    GemOfThrones.new({:cache => cache, :mutex_timeout => 0.01}.merge(options))
   end
 
   it "has a VERSION" do
-    GameOfThrones::VERSION.should =~ /^[\.\da-z]+$/
+    GemOfThrones::VERSION.should =~ /^[\.\da-z]+$/
   end
 
   it "raises with unsupported timeouts" do

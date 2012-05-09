@@ -7,16 +7,16 @@ which afaik only `ActiveSupport::Cache::MemCacheStore` and [ActiveSupport::Cache
 
 Install
 =======
-    gem install game_of_thrones
+    gem install gem_of_thrones
 Or
 
-    rails plugin install git://github.com/grosser/game_of_thrones.git
+    rails plugin install git://github.com/grosser/gem_of_thrones.git
 
 
 Usage
 =====
 
-    aspirant = GameOfThrones.new(
+    aspirant = GemOfThrones.new(
       :cache => Rails.cache, # where to store the lock ?
       :timeout => 60 # if current king does not react the next aspirant will take its place
     )
@@ -36,4 +36,4 @@ Author
 [Zendesk](http://zendesk.com)<br/>
 michael@grosser.it<br/>
 License: MIT<br/>
-[![Build Status](https://secure.travis-ci.org/grosser/game_of_thrones.png)](http://travis-ci.org/grosser/game_of_thrones)
+[![Build Status](https://secure.travis-ci.org/grosser/gem_of_thrones.png)](http://travis-ci.org/grosser/gem_of_thrones)
