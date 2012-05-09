@@ -6,36 +6,26 @@ class GameOfThrones
       :timeout => 10 * 60,
       :cache_key => "GameOfThrones.",
       :cache => "You have to set :cache",
-      :mutex_timeout => 0.1
     }.merge(options)
+
+    raise "Only integers are supported for timeout" if options[:timeout].is_a?(Float)
   end
 
   def rise_to_power
-    if no_king? or in_power?
-      take_power
-      sleep mutex_timeout # multiple people could try to take power simultaneously
-      in_power?
-    else
-      false
-    end
+    i_am_king! :try => !in_power?
   end
 
   private
 
-  def no_king?
-    not current_king
+  def i_am_king!(options)
+    @options[:cache].write(@options[:cache_key], myself,
+      :expires_in => @options[:timeout],
+      :unless_exist => options[:try]
+    )
   end
 
   def in_power?
     current_king == myself
-  end
-
-  def mutex_timeout
-    @options[:mutex_timeout] + (@options[:mutex_timeout] * rand)
-  end
-
-  def take_power
-    @options[:cache].write(@options[:cache_key], myself, :expires_in => @options[:timeout])
   end
 
   def current_king

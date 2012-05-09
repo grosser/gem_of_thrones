@@ -1,6 +1,10 @@
 Everybody wants to be king, but only one can win (synchronized via a distributed cache).<br/>
 Update something everybody depends on without doing it multiple times or using a cron.
 
+Cache must support the interface `write(key, value, :expires_in => xxx, :unless_exist => true)`,<br/>
+which afaik only `ActiveSupport::Cache::MemCacheStore` and [ActiveSupport::Cache::LibmemcachedStore](https://github.com/benhutton/libmemcached_store) does.
+
+
 Install
 =======
     sudo gem install game_of_thrones
