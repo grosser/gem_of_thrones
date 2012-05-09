@@ -11,12 +11,6 @@ class GameOfThrones
   end
 
   def rise_to_power
-    yield if try_to_get_power
-  end
-
-  private
-
-  def try_to_get_power
     if no_king? or in_power?
       take_power
       sleep mutex_timeout # multiple people could try to take power simultaneously
@@ -25,6 +19,8 @@ class GameOfThrones
       false
     end
   end
+
+  private
 
   def no_king?
     not current_king

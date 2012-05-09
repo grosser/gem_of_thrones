@@ -14,7 +14,7 @@ describe GameOfThrones do
   describe "#rise_to_power" do
     it "executes if there is no king" do
       result = nil
-      new_game.rise_to_power do
+      if new_game.rise_to_power
         result = 1
       end
       result.should == 1
@@ -22,10 +22,10 @@ describe GameOfThrones do
 
     it "executes if the king is alive" do
       result = nil
-      new_game.rise_to_power do
+      if new_game.rise_to_power
         result = 1
       end
-      new_game.rise_to_power do
+      if new_game.rise_to_power
         result = 2
       end
       result.should == 1
@@ -37,7 +37,7 @@ describe GameOfThrones do
         result = 1
       end
       sleep 0.3
-      new_game.rise_to_power do
+      if new_game.rise_to_power
         result = 2
       end
       result.should == 2
@@ -46,11 +46,15 @@ describe GameOfThrones do
     it "ruling keeps the king in power" do
       result = nil
       old_king = new_game(:timeout => 0.2)
-      old_king.rise_to_power{ result = 1 }
+      if old_king.rise_to_power
+        result = 1
+      end
       sleep 0.15
-      old_king.rise_to_power{ result = 2 }
+      if old_king.rise_to_power
+        result = 2
+      end
       sleep 0.15
-      new_game.rise_to_power do
+      if new_game.rise_to_power
         result = 3
       end
       result.should == 2

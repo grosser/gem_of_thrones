@@ -20,7 +20,7 @@ Usage
     Thread.new do
       loop do
         # if there is no king or the old king did not do anything, this yields
-        aspirant.rise_to_power do
+        if aspirant.rise_to_power
           # do something that should only be done by one
         end
         sleep 30 # use a timeout lower then the throne timeout
