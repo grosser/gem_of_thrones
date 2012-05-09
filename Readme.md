@@ -2,12 +2,12 @@ Everybody wants to be king, but only one can win (synchronized via a distributed
 Update something everybody depends on without doing it multiple times or using a cron.
 
 Cache must support the interface `write(key, value, :expires_in => xxx, :unless_exist => true)`,<br/>
-which afaik only `ActiveSupport::Cache::MemCacheStore` and [ActiveSupport::Cache::LibmemcachedStore](https://github.com/benhutton/libmemcached_store) does.
+which afaik only `ActiveSupport::Cache::MemCacheStore` and [ActiveSupport::Cache::LibmemcachedStore](https://github.com/benhutton/libmemcached_store) do.
 
 
 Install
 =======
-    sudo gem install game_of_thrones
+    gem install game_of_thrones
 Or
 
     rails plugin install git://github.com/grosser/game_of_thrones.git
@@ -23,11 +23,11 @@ Usage
 
     Thread.new do
       loop do
-        # if there is no king or the old king did not do anything, this yields
+        # if I can be king (there is no king or the old king did not do anything)
         if aspirant.rise_to_power
           # do something that should only be done by one
         end
-        sleep 30 # use a timeout lower then the throne timeout
+        sleep 30 # if you choose a timeout greater then the throne timeout the king will always change
       end
     end
 
