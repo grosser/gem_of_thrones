@@ -31,6 +31,20 @@ Usage
       end
     end
 
+When not to use (by [Ben Osheroff](https://github.com/osheroff))
+==================
+For a really critical master, memcache isn't traditionally that great.
+Memcache's best high-availability offering is a cluster of servers with the key hashing to a different server,
+and a server can drop out (due to timeouts or sporadic failures or what have you),
+and then you lose cache coherency and some servers can think a key belongs somewhere
+and some servers think it belongs elsewhere, and it's just not that great.
+What you're left with then is either going with a single memcache (single point of failure, oy),
+or sacrificing true locks.
+
+Redis might be slightly better solution as it at least offers some failover via replication, and I think it has a check-and-set operator.
+
+The big heavies in this space are of course zookeeper etc, but that can be overboard.
+
 Author
 ======
 [Zendesk](http://zendesk.com)<br/>
