@@ -2,7 +2,7 @@ Everybody wants to be king, but only one can win (synchronized via a distributed
 Update something everybody depends on without doing it multiple times or using a cron.
 
 Cache must support the interface `write(key, value, :expires_in => xxx, :unless_exist => true)`,<br/>
-which afaik only `ActiveSupport::Cache::MemCacheStore` and [ActiveSupport::Cache::LibmemcachedStore](https://github.com/benhutton/libmemcached_store) do.
+which afaik only `ActiveSupport::Cache::MemCacheStore`, [ActiveSupport::Cache::LibmemcachedStore](https://github.com/benhutton/libmemcached_store) and `ActiveSupport::Cache::MemoryStore` @ rails edge do.
 
 
 Install
