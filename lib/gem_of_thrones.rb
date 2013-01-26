@@ -4,10 +4,10 @@ class GemOfThrones
   def initialize(options)
     @options = {
       :timeout => 10 * 60,
-      :cache_key => "GemOfThrones.",
-      :cache => "You have to set :cache",
+      :cache_key => "GemOfThrones."
     }.merge(options)
 
+    raise "Set a :cache" unless options[:cache]
     raise "Only integers are supported for timeout" if options[:timeout].is_a?(Float)
   end
 

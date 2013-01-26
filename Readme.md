@@ -42,6 +42,10 @@ Redis might be slightly better solution as it at least offers some failover via 
 
 The big heavies in this space are of course zookeeper etc, but that can be overboard.
 
+Development
+==========
+Start `memcached` then `rake`.
+
 Author
 ======
 [Zendesk](http://zendesk.com)<br/>
