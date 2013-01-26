@@ -7,11 +7,8 @@ which afaik only `ActiveSupport::Cache::MemCacheStore`, [ActiveSupport::Cache::L
 
 Install
 =======
+
     gem install gem_of_thrones
-Or
-
-    rails plugin install git://github.com/grosser/gem_of_thrones.git
-
 
 Usage
 =====
@@ -50,4 +47,4 @@ Author
 [Zendesk](http://zendesk.com)<br/>
 michael@grosser.it<br/>
 License: MIT<br/>
-[![Build Status](https://secure.travis-ci.org/grosser/gem_of_thrones.png)](http://travis-ci.org/grosser/gem_of_thrones)
+[![Build Status](https://travis-ci.org/grosser/gem_of_thrones.png)](https://travis-ci.org/grosser/gem_of_thrones)
