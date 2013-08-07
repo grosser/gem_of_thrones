@@ -7,6 +7,6 @@ Gem::Specification.new name, GemOfThrones::VERSION do |s|
   s.authors = ["Michael Grosser"]
   s.email = "michael@grosser.it"
   s.homepage = "http://github.com/grosser/#{name}"
-  s.files = `git ls-files`.split("\n")
+  s.files = `git ls-files lib`.split("\n")
   s.license = 'MIT'
 end
